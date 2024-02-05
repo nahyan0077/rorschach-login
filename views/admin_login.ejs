@@ -1,0 +1,32 @@
+<%-include('header')-%>
+
+<!-- admin login page -->
+
+<nav class="navbar navbar-light justify-content-between">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="color: white">RORSCHACH</a>
+    <form class="form-inline">
+      <a class="btn btn-success" style="margin-left: 10px" href="/">Log in</a>
+    </form>
+  </div>
+</nav>
+
+<div class="login-page">
+  <div class="form">
+    <%if(locals.logout){%>
+    <div class="alert-success text-center">Admin Log out Successfully</div>
+    <%}%>
+    <i class="fa-solid fa-user fa-2xl" style="color: #06360a"></i>
+    <h6 style="color: #06360a">Admin Login</h6>
+    <br />
+    <form class="login-form" action="/admin" method="POST">
+      <input type="email" name="email" placeholder="email" />
+      <input type="password" name="password" placeholder="password" required />
+      <p id="pp" style="color: red"><%= locals.data?data:""%></p>
+      <button id="ok" type="submit">login</button>
+      <p class="message">Are you an user? <a href="/">User login</a></p>
+    </form>
+  </div>
+</div>
+
+<%-include('footer')-%>

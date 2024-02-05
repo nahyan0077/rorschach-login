@@ -1,0 +1,24 @@
+<%-include('header')-%>
+
+<%-include('admin_nav')-%>
+
+<div class="login-page" style="color: #06360a">
+  <div class="form">
+    <i class="fa-solid fa-user fa-2xl" style="color: #06360a;"></i>
+      <h6 style="color: #06360a" >Update User Details</h6><br>
+    <form class="register-form" action="/updateUser" method="POST">
+      <input type="text" value="<%-datas._id-%>" name="_id" hidden/>
+      <input type="text" value="<%-datas.name-%>" name="name" required/>
+      <input type="password" value="<%-datas.password-%>" name="password" required/>
+      <input type="email" value="<%-datas.email-%>" name="email" required/>
+      <br>
+      <br>
+      <button type="submit">Update User</button>
+      
+    </form>
+  </div>
+</div>
+
+
+
+<%-include('footer')-%>

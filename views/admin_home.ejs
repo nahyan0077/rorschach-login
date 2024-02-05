@@ -1,0 +1,38 @@
+<%-include('header')-%> <%-include('admin_nav')-%>
+
+<div class="container">
+  <div class="row my-5">
+    <table id="example" class="table bg-light table-striped text-center">
+      <thead class="thead-dark text-center">
+        <tr>
+          <th class="text-center" scope="col">Index</th>
+          <th class="text-center" scope="col">Name</th>
+          <th class="text-center" scope="col">Email</th>
+          <th class="text-center" scope="col">Password</th>
+          <th class="text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach((element,i) => { %>
+        <tr>
+          <th scope="row"><%-i+1-%></th>
+          <td><%-element.name-%></td>
+          <td><%-element.email-%></td>
+          <td><p style="font-weight: bolder;">********</p></td>
+          <td>
+            <a href="/editUser/<%-element._id-%>"
+              ><i class="fa-solid fa-pen-to-square fa-lg mx-1 text-success"></i
+            ></a>
+
+            <a href="/deleteUser/<%-element._id-%>"
+              ><i class="fa-solid fa-trash fa-lg mx-1 text-danger"></i
+            ></a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%-include('footer')-%>
