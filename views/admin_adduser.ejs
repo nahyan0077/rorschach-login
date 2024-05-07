@@ -1,0 +1,22 @@
+<%-include('header')-%> <%-include('admin_nav')-%>
+
+<div class="login-page" style="color: #06360a">
+  <div class="form">
+    <%if(locals.addUser){%>
+    <div class="alert-success text-center"><%= addUser%></div>
+    <%}%>
+    <i class="fa-solid fa-user fa-2xl" style="color: #06360a"></i>
+    <h6 style="color: #06360a">Add New User</h6>
+    <br />
+    <form class="register-form" action="/adduser" method="POST">
+      <input type="text" placeholder="user name" name="name" />
+      <input type="password" placeholder="password" name="password" />
+      <input type="email" placeholder="email address" name="email" required />
+      <br />
+      <br />
+      <button type="submit">Add New User</button>
+    </form>
+  </div>
+</div>
+
+<%-include('footer')-%>
